@@ -1,5 +1,8 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:article_name",
  "creation": "2021-06-18 10:46:09.894550",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -7,9 +10,12 @@
  "field_order": [
   "article_name",
   "image",
+  "column_break_3",
   "author",
+  "section_break_5",
   "description",
   "isbn",
+  "route",
   "status",
   "publisher"
  ],
@@ -17,7 +23,10 @@
   {
    "fieldname": "article_name",
    "fieldtype": "Data",
-   "label": "Article Name"
+   "in_list_view": 1,
+   "label": "Article Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "image",
@@ -50,14 +59,30 @@
    "fieldname": "publisher",
    "fieldtype": "Data",
    "label": "Publisher"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-06-18 10:46:22.149574",
+ "modified": "2021-06-18 21:41:40.100213",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
+ "name_case": "Title Case",
  "owner": "Administrator",
  "permissions": [
   {
@@ -71,8 +96,30 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Librarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Library Member",
+   "share": 1
   }
  ],
+ "route": "articles",
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1
